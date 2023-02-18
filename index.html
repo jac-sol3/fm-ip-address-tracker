@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./styles/style.css" />
+    <!-- Map API -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+      crossorigin=""
+    ></script>
+    <title>IP Address Tracker</title>
+  </head>
+  <body>
+    <main>
+      <div class="form-box">
+        <h1>IP Address Tracker</h1>
+        <form id="form-inputs">
+          <input
+            type="text"
+            id="form-inputs__ip"
+            name="ip"
+            placeholder="Search for any IP address"
+            minlength="7"
+            maxlength="15"
+            size="15"
+            pattern="^((\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.){3}(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$"
+            required
+          />
+          <!-- minlen, maxlen, pattern that only correct ip adress can be submit -->
+          <input
+            type="image"
+            id="form-inputs__submit"
+            src="./images/icon-arrow.svg"
+            width="11"
+            height="14"
+            alt="Submit"
+          />
+        </form>
+      </div>
+      <div class="info-box">
+        <section class="info-box__element">
+          <h2>IP ADDRESS</h2>
+          <span class="content-ip content"></span>
+        </section>
+        <section class="info-box__element">
+          <h2>LOCATION</h2>
+          <span class="content-location content"></span>
+        </section>
+        <section class="info-box__element">
+          <h2>TIMEZONE</h2>
+          <span class="content-timezone content"></span>
+        </section>
+        <section class="info-box__element">
+          <h2>ISP</h2>
+          <span class="content-isp content"></span>
+        </section>
+      </div>
+      <div id="map"></div>
+    </main>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
